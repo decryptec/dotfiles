@@ -57,11 +57,6 @@
 services.xserver.displayManager.gdm.enable = true;
 services.xserver.desktopManager.gnome.enable = true;
 
-# enable KDE Plasma 6
-#       services.displayManager.sddm.enable = true;
-#       services.desktopManager.plasma6.enable = true;
-
-
 # configure keymap in x11
         services.xserver.xkb = {
                 layout = "us";
