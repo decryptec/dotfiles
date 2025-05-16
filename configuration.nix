@@ -60,6 +60,7 @@
   services.displayManager.sddm.enable = true;
   services.desktopManager.plasma6.enable = true;
 
+
 # configure keymap in x11
         services.xserver.xkb = {
                 layout = "us";
@@ -130,6 +131,7 @@ security.sudo.extraRules = [{
 # $ nix search wget
         environment.systemPackages = with pkgs; [
                         vim #Text editor
+                        vscode #Text editor
                         wget # A utility for non-interactive download of files from the web.
                         fastfetch # A fast and feature-rich information fetching tool.
                         git # A version control system for tracking changes in source code during software development.
@@ -142,8 +144,6 @@ security.sudo.extraRules = [{
                         gcc # The GNU Compiler Collection, including front ends for C, C++, and other languages.
                         mako # A lightweight notification daemon for Wayland.
                         libnotify # A library that sends desktop notifications.
-                        slurp # A tool to select a region of the screen for Wayland.
-                        grim # A screenshot utility for Wayland.
                         wl-clipboard # A Wayland clipboard utility.
                         kitty # A fast, feature-rich, cross-platform, GPU-based terminal emulator.
                         wezterm # A GPU-accelerated terminal emulator and multiplexer written in Rust.
@@ -152,7 +152,8 @@ security.sudo.extraRules = [{
                         yazi #Terminal file manager
                         dolphin #GUI file manager
                         hyprpaper #Wallpaper utility
-                        matugen
+                        hyprshot # Screenshot tool
+                        pavucontrol # Audio mixer
                         (waybar.overrideAttrs (oldAttrs: {
     mesonFlags = oldAttrs.mesonFlags ++ [ "-Dexperimental=true" ];
   })
